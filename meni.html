@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мени — Артисан Пекара Бриош</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,460;9..144,600;9..144,680&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBEFD6;
+    --cream-light:#FFF9EC;
+    --crust:#3A2618;
+    --crust-soft:#6B4F3B;
+    --burnt:#C6482E;
+    --gold:#E8A33D;
+    --sage:#7C8A5C;
+    --line: rgba(58,38,24,0.14);
+    --ink:#1C120B;
+    --ink-soft:#2A1C12;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--crust);
+    font-family:'Work Sans', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    color:var(--crust);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{
+    max-width:1140px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--burnt);
+  }
+
+  /* ---------- top nav ---------- */
+  header.topnav{
+    position:sticky;
+    top:0;
+    z-index:40;
+    background:rgba(251,239,214,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .topnav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 32px;
+    gap:20px;
+  }
+  .brandmark{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:600;
+    text-decoration:none;
+  }
+  .brandmark svg{width:26px;height:26px;flex-shrink:0;}
+  nav.links{
+    display:flex;
+    gap:28px;
+    font-size:14.5px;
+  }
+  nav.links a{text-decoration:none;opacity:0.7;}
+  nav.links a:hover{opacity:1;}
+  nav.links a.active{opacity:1;color:var(--burnt);font-weight:600;}
+  .nav-social{display:flex;gap:14px;align-items:center;}
+  .nav-social a{opacity:0.75;}
+  .nav-social svg{width:17px;height:17px;}
+
+  /* ---------- page header (small dark banner) ---------- */
+  .page-header{
+    position:relative;
+    background:
+      radial-gradient(ellipse at 18% 20%, rgba(232,163,61,0.16), transparent 55%),
+      radial-gradient(ellipse at 85% 80%, rgba(198,72,46,0.18), transparent 55%),
+      linear-gradient(160deg, var(--ink) 0%, var(--ink-soft) 55%, #241711 100%);
+    color:var(--cream-light);
+    padding:70px 0 56px;
+  }
+  .page-header .eyebrow{color:#E9B46B;}
+  .page-header h1{
+    margin-top:14px;
+    font-size:clamp(34px,5vw,54px);
+    color:var(--cream-light);
+  }
+  .page-header p{
+    margin-top:14px;
+    max-width:48ch;
+    font-size:16.5px;
+    color:#E4D3B4;
+  }
+
+  /* ---------- section shell ---------- */
+  section{
+    padding:86px 0;
+    border-top:1px solid var(--line);
+  }
+  .section-head{
+    max-width:620px;
+    margin-bottom:46px;
+  }
+  .section-head h2{
+    margin-top:14px;
+    font-size:clamp(30px,3.6vw,42px);
+    line-height:1.1;
+  }
+  .section-head p{
+    margin-top:16px;
+    color:var(--crust-soft);
+    font-size:16.5px;
+  }
+
+  /* ---------- products ---------- */
+  .product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:26px;
+  }
+  .product-card{
+    background:var(--cream-light);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .product-photo{
+    aspect-ratio:1/1;
+    background:linear-gradient(145deg,#F4E3B9,#ECD29C);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .product-photo svg{width:56%;height:56%;}
+  .product-body{padding:18px 18px 22px;}
+  .product-body h3{font-size:17px;}
+  .product-body p{
+    margin:8px 0 0;
+    font-size:14px;
+    color:var(--crust-soft);
+    line-height:1.5;
+  }
+  .product-tag{
+    display:inline-block;
+    margin-top:12px;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--burnt);
+    font-weight:600;
+  }
+
+  /* ---------- note strip ---------- */
+  .note-strip{
+    background:var(--cream-light);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:26px 30px;
+    margin-top:46px;
+    font-size:15px;
+    color:var(--crust-soft);
+  }
+  .note-strip strong{color:var(--crust);}
+
+  .cta-line{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:14px 26px;
+    border-radius:3px;
+    font-size:15px;
+    font-weight:500;
+    text-decoration:none;
+    border:1px solid transparent;
+  }
+  .btn.primary-light{background:var(--crust);color:var(--cream-light);border-color:var(--crust);}
+  .btn.ghost{background:transparent;color:var(--crust);border-color:var(--crust);}
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--ink);
+    color:#C9B58D;
+    padding:64px 0 36px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:40px;
+    border-bottom:1px solid rgba(251,239,214,0.12);
+  }
+  .footer-brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:600;
+    color:var(--cream-light);
+  }
+  .footer-brand svg{width:24px;height:24px;}
+  .footer-grid p{margin:14px 0 0;font-size:14px;max-width:34ch;}
+  .footer-col h4{
+    font-family:'Work Sans', sans-serif;
+    font-size:12.5px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:#E9D8B8;
+    margin:0 0 16px;
+    font-weight:600;
+  }
+  .footer-col a{
+    display:block;
+    text-decoration:none;
+    font-size:14.5px;
+    color:#C9B58D;
+    margin-bottom:11px;
+  }
+  .footer-col a:hover{color:var(--cream-light);}
+  .footer-bottom{
+    padding-top:26px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size:13px;
+    color:#8C7A5C;
+  }
+
+  @media (max-width:900px){
+    nav.links{display:none;}
+    .product-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+<link rel="stylesheet" href="extra.css">
+</head>
+<body>
+
+<header class="topnav">
+  <div class="wrap">
+    <a class="brandmark" href="index.html">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 24 C6 14, 14 8, 20 8 C26 8, 34 14, 34 24 C34 24, 27 20, 20 24 C13 28, 6 24, 6 24 Z" fill="var(--gold)" stroke="var(--crust)" stroke-width="1.4"/>
+      </svg>
+      Бриош
+    </a>
+    <nav class="links">
+      <a href="index.html">Дома</a>
+      <a href="meni.html" class="active">Мени</a>
+      <a href="restorani.html">За ресторани</a>
+      <a href="lokacija.html">Локација</a>
+      <a href="kontakt.html">Контакт</a>
+    </nav>
+    <div class="nav-social">
+      <a class="lang-btn" href="en/meni.html" hreflang="en" lang="en" aria-label="English">EN</a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.6" fill="currentColor"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="page-header">
+  <div class="wrap">
+    <span class="eyebrow">Што печеме</span>
+    <h1>Мени со цени</h1>
+    <p>Понудата не е фиксна — се менува од недела во недела, во зависност од сезоната и расположението на Ева.</p>
+  </div>
+</div>
+
+<section style="border-top:0;padding-top:30px">
+  <div class="wrap">
+    <div class="menu-tools">
+      <input class="search" type="search" placeholder="Пребарај во менито…" aria-label="Пребарај во менито…">
+      <div class="menu-nav">
+        <a href="#c-bread">Леб, пецива и крекери</a>
+        <a href="#c-focaccia">Фокачи и пица фокачи</a>
+        <a href="#c-sandwiches">Сендвичи</a>
+        <a href="#c-savory">Млечни пецива</a>
+        <a href="#c-babka">Бапки и ролнички</a>
+        <a href="#c-muffins">Мафини</a>
+        <a href="#c-cakes">Колачи и тортички</a>
+        <a href="#c-cookies">Колачиња</a>
+      </div>
+    </div>
+    <div id="menuList">
+    <div class="menu-cat" id="c-bread">
+      <h2>Леб, пецива и крекери</h2>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош бургер лепче (по нарачка)</h3><p>Брашно, млеко, квасец, сол, шеќер, путер, јајца, сусам</p></div>
+        <div class="m-price">50 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Капуто земички со микс од семки</h3><p>Пченично брашно тип 00, малку интегрално брашно, квасец, маслиново масло, сол, малку шеќер, семки од тиква, семки од сончоглед, сусам, лен</p></div>
+        <div class="m-price">40 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Интегрални капуто земички</h3><p>Пченично брашно тип 00, 100% интегрално брашно, квасец, маслиново масло, сол, малку шеќер, семки од тиква, семки од сончоглед, сусам, лен</p></div>
+        <div class="m-price">35 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Олива багет пециво</h3><p>Пченично брашно тип 00, квасец, розмарин, маслинки, маслиново масло, сол</p></div>
+        <div class="m-price">60 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>1 кг домашни путер кифлички (30 парчиња)</h3><p>Пченично брашно, јајца, масло, млеко, сол, шеќер, квасец, путер</p></div>
+        <div class="m-price">480 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>1 кг интегрални путер кифлички (30 парчиња)</h3><p>Интегрално брашно, пченично брашно, јајца, масло, млеко, сол, шеќер, квасец, путер</p></div>
+        <div class="m-price">480 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>1 кг посни кифлички (30 парчиња)</h3><p>Пченично брашно, масло, вода, сол, шеќер, квасец, маргарин</p></div>
+        <div class="m-price">380 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>100% интегрален леб ~850 гр</h3><p>Интегрално брашно, квасец, мед, сол</p></div>
+        <div class="m-price">160 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Пакет крекери со пиво (35 парчиња)</h3><p>Пченично брашно, интегрално брашно, пиво, сончоглед, сусам, ленено семе, масло, пециво, црвен пипер, сол</p></div>
+        <div class="m-price">400 ден.</div>
+      </div>
+    </div>
+    <div class="menu-cat" id="c-focaccia">
+      <h2>Фокачи и пица фокачи</h2>
+      <div class="m-item">
+        <div class="m-main"><h3>Фокача со шери и рузмарин</h3><p>Фокача лепче, маслиново масло, шери домати, рузмарин, хималајска сол</p></div>
+        <div class="m-price">80 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Фокача со шери и пармезан</h3><p>Фокача лепче, маслиново масло, шери домати, пармезан, хималајска сол</p></div>
+        <div class="m-price">120 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Фокача Cacio e Pepe</h3><p>Фокача лепче, маслиново масло, пармезан, свежо мелен бибер, хималајска сол</p></div>
+        <div class="m-price">100 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Фокача со маслинки и сос од домати</h3><p>Фокача лепче, микс од црни/зелени/каламата маслинки, сос од домати</p></div>
+        <div class="m-price">100 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Фокача со карамелизиран кромид и маслинки</h3><p>Фокача лепче, микс од црни/зелени/каламата маслинки, карамелизиран кромид</p></div>
+        <div class="m-price">100 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бранч фокача</h3><p>Фокача лепче, карамелизиран кромид, компири, моцарела, кашкавал, свежи печурки</p></div>
+        <div class="m-price">150 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Фокача со песто, шери и пармезан</h3><p>Фокача лепче, шери домати, песто ценовезе сос, пармезан</p></div>
+        <div class="m-price">140 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Пица фокача Маргарита</h3><p>Пица фокача, доматен сос, моцарела, босилок</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Пица фокача вегетариана</h3><p>Пица фокача, доматен сос, моцарела, свежа пиперка/печурка/микс од маслинки</p></div>
+        <div class="m-price">140 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Фокача со 4 вида сирење и тиквички</h3><p>Фокача лепче, млади тиквички, рикота, моцарела, АБЦ крем сирење, пармезан</p></div>
+        <div class="m-price">140 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Фокача со шери, маслинки и рузмарин</h3><p>Фокача лепче, шери домати, микс од црни/зелени/каламата маслинки, рузмарин</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Пица фокача со мортадела</h3><p>Пица фокача, доматен сос, моцарела, италијанска мортадела, босилок</p></div>
+        <div class="m-price">140 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Фокача со шери домати и италијанска мортадела</h3><p>Пица фокача, италијанска мортадела, свежи шери домати</p></div>
+        <div class="m-price">140 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Костен фокача</h3><p>Фокача лепче, карамелизиран кромид, кестени, пармезан</p></div>
+        <div class="m-price">150 ден.</div>
+      </div>
+    </div>
+    <div class="menu-cat" id="c-sandwiches">
+      <h2>Сендвичи</h2>
+      <div class="m-item">
+        <div class="m-main"><h3>Фокача сендвич — Веге 1</h3><p>Фокача лепче, хумус, маслинки, шери домат, рукола, посен кашкавал (по желба)</p></div>
+        <div class="m-price">170 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Фокача сендвич — Веге 2</h3><p>Фокача лепче, хумус, карамелизиран кромид, маслинки</p></div>
+        <div class="m-price">170 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Фокача сендвич — Свеж</h3><p>Фокача лепче, песто росо, пилешко филе, пармезан, рукола, шери домат</p></div>
+        <div class="m-price">190 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Фокача сендвич — Парманело</h3><p>Фокача лепче, крем сирење, парманело, шери домат, пармезан, рукола</p></div>
+        <div class="m-price">190 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Фокача сендвич — Мортадела</h3><p>Фокача лепче, крем сирење (песто сос), мортадела со фстак, шери домат, пармезан</p></div>
+        <div class="m-price">190 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Капуто сендвич — Веган 2</h3><p>Капуто земичка, хумус, веган кашкавал, корнишони, свежа краставица/домат/рукола</p></div>
+        <div class="m-price">120 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Капуто сендвич — Регулар 1</h3><p>Капуто земичка, павлака, пилешко филе, свежа краставица (домат), рукола</p></div>
+        <div class="m-price">140 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Капуто сендвич — Регулар 2</h3><p>Капуто земичка, рикота, мортадела, домат, рукола</p></div>
+        <div class="m-price">160 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Капуто сендвич — Регулар 3</h3><p>Капуто земичка, крем сирење, грилувана тиквица, кашкавал, свежа краставица (рукола)</p></div>
+        <div class="m-price">140 ден.</div>
+      </div>
+    </div>
+    <div class="menu-cat" id="c-savory">
+      <h2>Млечни пецива</h2>
+      <div class="m-item">
+        <div class="m-main"><h3>Солена бапка со моцарела, песто и сув домат</h3><p>Пченично брашно, масло, млеко, сол, јајца, шеќер, квасец, песто, сув домат во масло, моцарела</p></div>
+        <div class="m-price">100 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Пециво со пилешки гради и кашкавал</h3><p>Пченично брашно, масло, млеко, сол, јајца, шеќер, квасец, пилешки гради, кашкавал</p></div>
+        <div class="m-price">80 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Млечно пециво со спанаќ и урда</h3><p>Пченично брашно, масло, млеко, сол, јајца, шеќер, квасец, спанаќ, урда</p></div>
+        <div class="m-price">70 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Пециво со ит. мортадела/унг. салама и кашкавал</h3><p>Пченично брашно, масло, млеко, сол, јајца, шеќер, квасец, деликатесна мортадела, кашкавал</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Млечно пециво со свежи печурки</h3><p>Пченично брашно, масло, млеко, сол, јајца, шеќер, квасец, павлака, свежи печурки, моцарела</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Млечно пециво со сланинче</h3><p>Пченично брашно, масло, млеко, сол, јајца, шеќер, квасец, павлака, сланинче, кашкавал</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Ролл стапчиња со путер и моцарела/маслинки</h3><p>Пченично брашно, масло, млеко, сол, јајца, шеќер, квасец, путер, моцарела, маслинки</p></div>
+        <div class="m-price">80 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Полнети солени перничиња со крем урда</h3><p>Брашно, јогурт, пециво, јајца, масло, копар, млечна урда, сув домат во масло, маслинки, црвена пиперка, пармезан, сусам, црно семе</p></div>
+        <div class="m-price">40 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Шери пециво</h3><p>Пченично брашно, масло, млеко, сол, јајца, шеќер, квасец, павлака, шери домати, пармезан</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Млечна пица пециво</h3><p>Пченично брашно, масло, млеко, сол, јајца, шеќер, квасец, италијански сос, едамер, свежи печурки, маслинки</p></div>
+        <div class="m-price">80 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Грчко пециво</h3><p>Пченично брашно, масло, млеко, сол, јајца, шеќер, квасец, грчка фета, тиквички</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Домашна проја (црвена пиперка и сирење / праз и сирење)</h3><p>Пченкарно брашно, пченично брашно, млеко, минерална вода, пециво, јајца, масло, црвена пиперка, праз, сирење, сусам</p></div>
+        <div class="m-price">80 ден.</div>
+      </div>
+    </div>
+    <div class="menu-cat" id="c-babka">
+      <h2>Бапки и ролнички</h2>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош бапка со чоколадо</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, чоколадо, какао</p></div>
+        <div class="m-price">80 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Чизкејк малина ролна со крем сирење глазура</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, малини, крем сирење</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Чизкејк вишна ролна со крем сирење глазура</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, вишни, крем сирење</p></div>
+        <div class="m-price">100 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Лимон боровинка ролна со крем сирење глазура</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, лимон, боровинки, крем сирење</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош бадем бапка со бело чоколадо</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, бадем, листови бадем, бело чоколадо</p></div>
+        <div class="m-price">120 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош божиќна бапка</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, чоколадо, сува кајсија, сува брусница, суво грозје, портокал</p></div>
+        <div class="m-price">120 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош козинјак „Ева“</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, чоколадо, лист бадем, суво грозје, портокал</p></div>
+        <div class="m-price">120 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош кардамон бапка</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, кардамон</p></div>
+        <div class="m-price">90 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош портокал кардамон бапка</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, кардамон, домашен џем од портокал</p></div>
+        <div class="m-price">120 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош лимон-мак бапка/ролнички</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, лимон, мак, крем сирење</p></div>
+        <div class="m-price">100 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош портокал-мак бапка/ролнички</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, портокал, мак, крем сирење</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош чоко-лешник бапка</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, лешници, чоко-лешник намаз</p></div>
+        <div class="m-price">120 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош фереро бапка</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, белгиско какао, црно чоколадо, лешници, чоко-лешник намаз</p></div>
+        <div class="m-price">120 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош шварцвалд бапка</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, белгиско какао, црно чоколадо, вишни</p></div>
+        <div class="m-price">120 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош бапка со цимет и крем сирење глазура</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, цимет, крем сирење</p></div>
+        <div class="m-price">90 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Јаболка цимет ролна со крем сирење глазура</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, јаболка, цимет, крем сирење</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Тиква цимет ролна со крем сирење глазура</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, тиква, цимет, крем сирење</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Морков цимет ролна со крем сирење глазура</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, морков, цимет, крем сирење</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош бапка со чоколадо и фстак намаз</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, чоколадо, какао, фстак намаз</p></div>
+        <div class="m-price">120 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош бапка со фстаци и фстак намаз</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, фстаци, фстак намаз</p></div>
+        <div class="m-price">140 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош ореви-портокал бапка</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, орев, портокал</p></div>
+        <div class="m-price">120 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош чоко-портокал бапка</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, чоколадо, какао, портокал</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош портокал ролна со домашен крем од портокал</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, портокал</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош даниш чизкејк со вишна</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, крем сирење, вишни</p></div>
+        <div class="m-price">100 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош даниш со чоко-лешник намаз и малини</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, чоко-лешник намаз, малини</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош даниш чизкејк со домашни јаболки и карамел</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, јаболка, крем сирење, домашен карамел</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош чоко-мак бапка</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, чоколадо, мак</p></div>
+        <div class="m-price">100 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Лимон ролна со крем сирење глазура</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, лимон, крем сирење</p></div>
+        <div class="m-price">100 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Бриош бапка со домашен ванила крем и суво грозје</h3><p>Брашно, млеко, квасец, путер, сол, шеќер, јајца, ванила, густин, суво грозје</p></div>
+        <div class="m-price">100 ден.</div>
+      </div>
+    </div>
+    <div class="menu-cat" id="c-muffins">
+      <h2>Мафини</h2>
+      <div class="m-item">
+        <div class="m-main"><h3>Чоко-портокал мафин</h3><p>Брашно, млеко, масло, шеќер, сол, јајца, ванила, црно чоколадо, портокал, пециво</p></div>
+        <div class="m-price">70 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Мафин со морков и крем сирење фил</h3><p>Брашно, млеко, масло, шеќер, сол, јајца, ванила, путер, морков, крем сирење, пециво, цимет, ѓумбир, морско оревче, каранфилче</p></div>
+        <div class="m-price">80 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Чоко-банана мафин</h3><p>Брашно, путер, млеко, шеќер, сол, јајца, ванила, какао, црно чоколадо, банана, пециво</p></div>
+        <div class="m-price">80 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Мафин со малини и бело/црно чоколадо</h3><p>Брашно, млеко, масло, шеќер, сол, јајца, ванила, бело/црно чоколадо, малини, пециво</p></div>
+        <div class="m-price">80 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Мафин со лимон и афион (мак)</h3><p>Брашно, млеко, масло, шеќер, сол, јајца, ванила, лимон, афион (мак), пециво</p></div>
+        <div class="m-price">60 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Мафин со јагоди и бело чоколадо</h3><p>Брашно, млеко, масло, шеќер, сол, јајца, ванила, бело чоколадо, јагоди, пециво</p></div>
+        <div class="m-price">80 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Мафин со вишна и црно чоколадо</h3><p>Брашно, млеко, масло, шеќер, сол, јајца, ванила, црно чоколадо, вишни, пециво</p></div>
+        <div class="m-price">70 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Мафин со боровинки и бело чоколадо</h3><p>Брашно, млеко, масло, шеќер, сол, јајца, ванила, бело чоколадо, боровинки, пециво</p></div>
+        <div class="m-price">80 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Мафин со малини, фстак и бело чоколадо</h3><p>Брашно, млеко, масло, шеќер, сол, јајца, ванила, бело чоколадо, малини, фстаци, пециво</p></div>
+        <div class="m-price">90 ден.</div>
+      </div>
+    </div>
+    <div class="menu-cat" id="c-cakes">
+      <h2>Колачи и тортички</h2>
+      <div class="m-item">
+        <div class="m-main"><h3>Француски мадлен колачиња</h3><p>Брашно, путер, млеко, шеќер, сол, јајца, ванила, пециво, портокал</p></div>
+        <div class="m-price">20 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Посно медено срце</h3><p>Брашно, масло, шеќер, сол, ванила, џем, сода, микс од зачини, какао, црно чоколадо</p></div>
+        <div class="m-price">60 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Лења пита со домашни јаболки</h3><p>Брашно, масло, јогурт, шеќер, јајца, ванила, пециво, зачини, јаболка</p></div>
+        <div class="m-price">70 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Чоко-банана торта</h3><p>Брашно, путер, млеко, павлака, банана, шеќер, јајца, ванила, црно чоколадо, сода, сол</p></div>
+        <div class="m-price">90 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Домашна тегната австриска штрудла со тиква/јаболка</h3><p>Брашно, јајца, сол, шеќер, путер, тиква/јаболка, цимет, малку масло</p></div>
+        <div class="m-price">100 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Тиква лате торта</h3><p>Брашно, тиква, цимет, ѓумбир, млеко, сол, шеќер, пециво, јајца, масло, крем сирење, декорација</p></div>
+        <div class="m-price">100 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Веган лимон торта</h3><p>Брашно, пециво, шеќер, сол, овесно млеко, масло, лимон, куркума</p></div>
+        <div class="m-price">80 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Морков торта со крем сирење глазура</h3><p>Брашно, портокал, млеко, масло, шеќер, сол, јајца, ванила, црно чоколадо, пециво</p></div>
+        <div class="m-price">100 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Овошен колач</h3><p>Брашно, млеко, масло, шеќер, пециво, јајца, сезонско овошје</p></div>
+        <div class="m-price">90 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Крамбл овошен колач</h3><p>Брашно, млеко, масло, шеќер, пециво, јајца, домашен путер крамбл, сезонско овошје</p></div>
+        <div class="m-price">110 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Парче печен рикота чизкејк</h3><p>Рикота, шеќер, ванила, јајца, павлака за готвење, бисквити, путер</p></div>
+        <div class="m-price">160 ден.</div>
+      </div>
+    </div>
+    <div class="menu-cat" id="c-cookies">
+      <h2>Колачиња</h2>
+      <div class="m-item">
+        <div class="m-main"><h3>Брауни колачиња</h3><p>Брашно, масло, алкално какао, шеќер, сол, јајца, ванила, пециво</p></div>
+        <div class="m-price">20 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Лимон колачиња</h3><p>Брашно, масло, сок и кора од лимон, шеќер, сол, јајца, ванила, пециво</p></div>
+        <div class="m-price">20 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Лимон твист путер колачиња</h3><p>Брашно, путер, сок и кора од лимон, шеќер, сол, јајца, ванила, пециво</p></div>
+        <div class="m-price">20 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Портокал колачиња</h3><p>Брашно, масло, сок и кора од портокал, шеќер, сол, јајца, ванила, пециво</p></div>
+        <div class="m-price">20 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Новогодишни колачиња</h3><p>Брашно, путер, шеќер, сол, јајца, ванила, пециво, цимет, ѓумбир, морско оревче, каранфилче</p></div>
+        <div class="m-price">40 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Лимон/портокал микс колачиња</h3><p>Брашно, масло, сок и кора од портокал и лимон, шеќер, сол, јајца, ванила, пециво</p></div>
+        <div class="m-price">20 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Посни медени цимет колачиња</h3><p>Брашно, масло, цимет, шеќер, сол, пекмез/маџун од црница, ванила, пециво</p></div>
+        <div class="m-price">30 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Посни чоко колачиња</h3><p>Брашно, масло, црно чоколадо, шеќер, сол, пекмез/маџун од црница, ванила, пециво</p></div>
+        <div class="m-price">40 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Путер боровинка колачиња</h3><p>Брашно, путер, јајца, шеќер, сол, пециво, ванила, 100% џем од боровинки</p></div>
+        <div class="m-price">40 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Колачиња со домашен фил од јаболки</h3><p>Брашно, јогурт, масло, шеќер, сол, пециво, ванила, цимет, ѓумбир, јаболка</p></div>
+        <div class="m-price">30 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Путер колачиња со црн сусам и бело чоколадо</h3><p>Брашно, путер, јајца, шеќер, сол, пециво, ванила, сода, црн сусам, бело чоколадо</p></div>
+        <div class="m-price">40 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Путер колачиња со црно чоколадо и таан</h3><p>Брашно, путер, јајца, шеќер, сол, пециво, ванила, сода, црно чоколадо, таан</p></div>
+        <div class="m-price">40 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Путер колачиња со портокал и бело чоколадо</h3><p>Брашно, путер, јајца, шеќер, сол, сода, ванила, портокал, црно чоколадо</p></div>
+        <div class="m-price">40 ден.</div>
+      </div>
+      <div class="m-item">
+        <div class="m-main"><h3>Путер колачиња со црно чоколадо и слатко од зелена смоква</h3><p>Брашно, путер, јајца, шеќер, сол, пециво, ванила, масло, црно чоколадо, парчиња слатко од зелена смоква</p></div>
+        <div class="m-price">40 ден.</div>
+      </div>
+    </div>
+    </div>
+    <div class="note-strip">
+      <strong>Напомена:</strong> се пече во мали количини секое утро, па одредени артикли знаат да се распродадат пред пладне. За да не ве изненади, проверете го Instagram профилот за дневната понуда.
+    </div>
+    <div class="cta-line">
+      <a class="btn primary-light" href="lokacija.html">Каде да нè најдете</a>
+      <a class="btn ghost" href="restorani.html">За ресторани</a>
+      <a class="btn ghost" href="https://www.instagram.com" target="_blank" rel="noopener">Дневна понуда на Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 24 C6 14, 14 8, 20 8 C26 8, 34 14, 34 24 C34 24, 27 20, 20 24 C13 28, 6 24, 6 24 Z" fill="var(--gold)" stroke="var(--cream-light)" stroke-width="1.2"/>
+          </svg>
+          Артисан Пекара Бриош
+        </div>
+        <p>Мала занаетчиска пекара во Скопје. Рачно печена, секое утро, без адитиви.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Навигација</h4>
+        <a href="index.html">Дома</a>
+        <a href="meni.html">Мени</a>
+        <a href="restorani.html">За ресторани</a>
+        <a href="lokacija.html">Локација</a>
+        <a href="kontakt.html">Контакт</a>
+      </div>
+      <div class="footer-col">
+        <h4>Контакт</h4>
+        <a href="tel:+38971772113">+389 71 772 113</a>
+        <a href="https://maps.app.goo.gl/HyBx2LAXdoSZknzL7" target="_blank" rel="noopener">ул. Пандил Шишков бр. 10, локал 8</a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener">@briosh на Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Артисан Пекара Бриош · Скопје, Македонија</span>
+      <span>Пон–Пет 06:00–12:00</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
