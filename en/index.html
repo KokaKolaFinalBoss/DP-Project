@@ -304,7 +304,29 @@
     font-size:13px;
     color:#8C7A5C;
   }
-
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:200px;
+    gap:14px;
+  }
+  .gallery-item{
+    position:relative;
+    margin:0;
+    overflow:hidden;
+    border-radius:6px;
+    border:1px solid var(--line);
+    background:#F2DFB2;
+  }
+  .gallery-item.wide{grid-column:span 2;}
+  .gallery-item.tall{grid-row:span 2;}
+  .gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .5s ease;
+  }
+  .gallery-item:hover img{transform:scale(1.05);}
   @media (max-width:900px){
     nav.links{display:none;}
     .story-row{grid-template-columns:1fr;}
@@ -332,14 +354,17 @@
     <nav class="links">
       <a href="index.html" class="active">Home</a>
       <a href="meni.html">Menu</a>
-      <a href="restorani.html">For Restaurants</a>
+      <a href="restorani.html">Orders</a>
       <a href="lokacija.html">Location</a>
       <a href="kontakt.html">Contact</a>
     </nav>
     <div class="nav-social">
       <a class="lang-btn" href="../index.html" hreflang="mk" lang="mk" aria-label="Македонски">МК</a>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+      <a href="https://www.instagram.com/brioche.artisanbakery" target="_blank" rel="noopener" aria-label="Instagram">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.6" fill="currentColor"/></svg>
+      </a>
+	  <a href="https://www.facebook.com/profile.php?id=61574772764739" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h2.5V4.5H14C11.8 4.5 10 6.3 10 8.5V11H7.5v3.5H10V21h3.5v-6.5H16l.5-3.5h-3V8.8c0-.5.3-.8.8-.8Z"/></svg>
       </a>
     </div>
   </div>
@@ -368,12 +393,7 @@
 
     <div class="story-row">
       <div class="story-visual">
-        <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-          <path d="M30 150 C30 70, 80 36, 110 36 C140 36, 190 70, 190 150 C190 150, 155 118, 120 134 C105 141, 112 160, 110 170 C108 160, 115 141, 100 134 C65 118, 30 150, 30 150 Z"
-            fill="var(--gold)" stroke="var(--crust)" stroke-width="2"/>
-          <path d="M55 130 C70 95, 90 68, 110 64" stroke="var(--crust)" stroke-width="1.4" fill="none" opacity="0.5"/>
-          <path d="M165 130 C150 95, 130 68, 110 64" stroke="var(--crust)" stroke-width="1.4" fill="none" opacity="0.5"/>
-        </svg>
+        <img src="../img/14.webp" loading="lazy">
       </div>
       <div class="story-text">
         <p><strong>Eva</strong> opens the bakery with one rule: everything is kneaded the same day, nothing pre-made. The dough rises slowly and naturally, like in a home kitchen — not in a factory.</p>
@@ -384,17 +404,48 @@
 
     <div class="story-row reverse">
       <div class="story-visual">
-        <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="78" cy="120" r="34" fill="var(--burnt)" stroke="var(--crust)" stroke-width="2"/>
-          <circle cx="140" cy="100" r="42" fill="var(--sage)" stroke="var(--crust)" stroke-width="2" opacity="0.9"/>
-          <circle cx="150" cy="155" r="26" fill="var(--gold)" stroke="var(--crust)" stroke-width="2"/>
-          <path d="M60 120 l36 0 M118 100 l44 0 M135 155 l30 0" stroke="var(--cream-light)" stroke-width="2.4" opacity="0.65"/>
-        </svg>
+        <img src="../img/15.webp" loading="lazy">
       </div>
       <div class="story-text">
         <p>The menu changes every week — sometimes focaccia with seasonal herbs, sometimes pumpkin-cinnamon rolls. Eva always adds something new for our regulars.</p>
         <p>The space is small and tucked away, but people find it — and always come back. The selection is limited, so it’s best to come early.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="galerija">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Gallery</span>
+      <h2>From our bakery</h2>
+      <p>A few glimpses of what we bake every morning.</p>
+    </div>
+    <div class="gallery-grid">
+      <figure class="gallery-item wide">
+        <img src="../img/1.webp" loading="lazy">
+      </figure>
+      <figure class="gallery-item">
+        <img src="../img/2.webp" loading="lazy">
+      </figure>
+      <figure class="gallery-item tall">
+        <img src="../img/10.webp" loading="lazy">
+      </figure>
+      <figure class="gallery-item tall">
+        <img src="../img/6.webp" loading="lazy">
+      </figure>
+      <figure class="gallery-item">
+        <img src="../img/3.webp" loading="lazy">
+      </figure>
+	  <figure class="gallery-item">
+        <img src="../img/12.webp" loading="lazy">
+      </figure>
+      <figure class="gallery-item wide">
+        <img src="../img/9.webp" loading="lazy">
+      </figure>
+	  <figure class="gallery-item">
+        <img src="../img/11.webp" loading="lazy">
+      </figure>
     </div>
   </div>
 </section>
@@ -420,7 +471,7 @@
     <span class="eyebrow">The craft — on Instagram</span>
     <h2>Be the first to know what’s fresh today</h2>
     <p>We share what’s baking this week and show the process behind every pastry.</p>
-    <a class="btn primary-light" href="https://www.instagram.com" target="_blank" rel="noopener">Follow us on Instagram →</a>
+    <a class="btn primary-light" href="https://www.instagram.com/brioche.artisanbakery" target="_blank" rel="noopener">Follow us on Instagram →</a>
   </div>
 </section>
 
@@ -440,7 +491,7 @@
         <h4>Navigation</h4>
         <a href="index.html">Home</a>
         <a href="meni.html">Menu</a>
-        <a href="restorani.html">For Restaurants</a>
+        <a href="restorani.html">Orders</a>
         <a href="lokacija.html">Location</a>
         <a href="kontakt.html">Contact</a>
       </div>
@@ -448,7 +499,7 @@
         <h4>Contact</h4>
         <a href="tel:+38971772113">+389 71 772 113</a>
         <a href="https://maps.app.goo.gl/HyBx2LAXdoSZknzL7" target="_blank" rel="noopener">Pandil Shishkov St. 10, unit 8</a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener">@briosh on Instagram</a>
+        <a href="https://www.instagram.com/brioche.artisanbakery" target="_blank" rel="noopener">@briosh on Instagram</a>
       </div>
     </div>
     <div class="footer-bottom">
