@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orders — Artisan Bakery Briosh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,460;9..144,600;9..144,680&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBEFD6;
+    --cream-light:#FFF9EC;
+    --crust:#3A2618;
+    --crust-soft:#6B4F3B;
+    --burnt:#C6482E;
+    --gold:#E8A33D;
+    --sage:#7C8A5C;
+    --line: rgba(58,38,24,0.14);
+    --ink:#1C120B;
+    --ink-soft:#2A1C12;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--crust);
+    font-family:'Work Sans', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    color:var(--crust);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{
+    max-width:1140px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--burnt);
+  }
+
+  /* ---------- top nav ---------- */
+  header.topnav{
+    position:sticky;
+    top:0;
+    z-index:40;
+    background:rgba(251,239,214,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .topnav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 32px;
+    gap:20px;
+  }
+  .brandmark{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:600;
+    text-decoration:none;
+  }
+  .brandmark svg{width:26px;height:26px;flex-shrink:0;}
+  nav.links{
+    display:flex;
+    gap:28px;
+    font-size:14.5px;
+  }
+  nav.links a{text-decoration:none;opacity:0.7;}
+  nav.links a:hover{opacity:1;}
+  nav.links a.active{opacity:1;color:var(--burnt);font-weight:600;}
+  .nav-social{display:flex;gap:14px;align-items:center;}
+  .nav-social a{opacity:0.75;}
+  .nav-social svg{width:17px;height:17px;}
+
+  /* ---------- page header (small dark banner) ---------- */
+  .page-header{
+    position:relative;
+    background:
+      radial-gradient(ellipse at 18% 20%, rgba(232,163,61,0.16), transparent 55%),
+      radial-gradient(ellipse at 85% 80%, rgba(198,72,46,0.18), transparent 55%),
+      linear-gradient(160deg, var(--ink) 0%, var(--ink-soft) 55%, #241711 100%);
+    color:var(--cream-light);
+    padding:70px 0 56px;
+  }
+  .page-header .eyebrow{color:#E9B46B;}
+  .page-header h1{
+    margin-top:14px;
+    font-size:clamp(34px,5vw,54px);
+    color:var(--cream-light);
+  }
+  .page-header p{
+    margin-top:14px;
+    max-width:48ch;
+    font-size:16.5px;
+    color:#E4D3B4;
+  }
+
+  /* ---------- section shell ---------- */
+  section{
+    padding:86px 0;
+    border-top:1px solid var(--line);
+  }
+  .section-head{
+    max-width:620px;
+    margin-bottom:46px;
+  }
+  .section-head h2{
+    margin-top:14px;
+    font-size:clamp(30px,3.6vw,42px);
+    line-height:1.1;
+  }
+  .section-head p{
+    margin-top:16px;
+    color:var(--crust-soft);
+    font-size:16.5px;
+  }
+
+  /* ---------- products ---------- */
+  .product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:26px;
+  }
+  .product-card{
+    background:var(--cream-light);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .product-photo{
+    aspect-ratio:1/1;
+    background:linear-gradient(145deg,#F4E3B9,#ECD29C);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .product-photo svg{width:56%;height:56%;}
+  .product-body{padding:18px 18px 22px;}
+  .product-body h3{font-size:17px;}
+  .product-body p{
+    margin:8px 0 0;
+    font-size:14px;
+    color:var(--crust-soft);
+    line-height:1.5;
+  }
+  .product-tag{
+    display:inline-block;
+    margin-top:12px;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--burnt);
+    font-weight:600;
+  }
+
+  /* ---------- note strip ---------- */
+  .note-strip{
+    background:var(--cream-light);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:26px 30px;
+    margin-top:46px;
+    font-size:15px;
+    color:var(--crust-soft);
+  }
+  .note-strip strong{color:var(--crust);}
+
+  .cta-line{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:14px 26px;
+    border-radius:3px;
+    font-size:15px;
+    font-weight:500;
+    text-decoration:none;
+    border:1px solid transparent;
+  }
+  .btn.primary-light{background:var(--crust);color:var(--cream-light);border-color:var(--crust);}
+  .btn.ghost{background:transparent;color:var(--crust);border-color:var(--crust);}
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--ink);
+    color:#C9B58D;
+    padding:64px 0 36px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:40px;
+    border-bottom:1px solid rgba(251,239,214,0.12);
+  }
+  .footer-brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:600;
+    color:var(--cream-light);
+  }
+  .footer-brand svg{width:24px;height:24px;}
+  .footer-grid p{margin:14px 0 0;font-size:14px;max-width:34ch;}
+  .footer-col h4{
+    font-family:'Work Sans', sans-serif;
+    font-size:12.5px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:#E9D8B8;
+    margin:0 0 16px;
+    font-weight:600;
+  }
+  .footer-col a{
+    display:block;
+    text-decoration:none;
+    font-size:14.5px;
+    color:#C9B58D;
+    margin-bottom:11px;
+  }
+  .footer-col a:hover{color:var(--cream-light);}
+  .footer-bottom{
+    padding-top:26px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size:13px;
+    color:#8C7A5C;
+  }
+
+  @media (max-width:900px){
+    nav.links{display:none;}
+    .product-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+<link rel="stylesheet" href="../extra.css">
+</head>
+<body>
+
+<header class="topnav">
+  <div class="wrap">
+    <a class="brandmark" href="index.html">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 24 C6 14, 14 8, 20 8 C26 8, 34 14, 34 24 C34 24, 27 20, 20 24 C13 28, 6 24, 6 24 Z" fill="var(--gold)" stroke="var(--crust)" stroke-width="1.4"/>
+      </svg>
+      Briosh
+    </a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="meni.html">Menu</a>
+      <a href="restorani.html" class="active">Orders</a>
+      <a href="lokacija.html">Location</a>
+      <a href="kontakt.html">Contact</a>
+    </nav>
+    <div class="nav-social">
+      <a class="lang-btn" href="../restorani.html" hreflang="mk" lang="mk" aria-label="Македонски">МК</a>
+      <a href="https://www.instagram.com/brioche.artisanbakery" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.6" fill="currentColor"/></svg>
+      </a>
+	  <a href="https://www.facebook.com/profile.php?id=61574772764739" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h2.5V4.5H14C11.8 4.5 10 6.3 10 8.5V11H7.5v3.5H10V21h3.5v-6.5H16l.5-3.5h-3V8.8c0-.5.3-.8.8-.8Z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="page-header">
+  <div class="wrap">
+    <span class="eyebrow">Business supply</span>
+    <h1>Fresh bread and pastries for your business</h1>
+    <p>Choose products from the menu, enter quantities and send a request — we’ll call you back with confirmation and terms.</p>
+  </div>
+</div>
+
+<section style="border-top:0">
+  <div class="wrap">
+    <div class="features">
+      <div class="feature"><h3>Fresh every morning</h3><p>Baked the same day, in small batches, before dawn.</p></div>
+      <div class="feature"><h3>No additives</h3><p>Flour, water, time and patience — no preservatives.</p></div>
+      <div class="feature"><h3>Large orders</h3><p>From bread and pastries to cakes and cookies — everything on the menu.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="max-width:880px">
+    <div class="section-head">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Order request</h2>
+      <p>B2B request</p>
+    </div>
+    <form class="form-card" action="https://formsubmit.co/info@example.com" method="POST">
+      <input type="hidden" name="_subject" value="Нова нарачка за ресторан — Бриош">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="form-grid">
+        <div class="field"><label for="f-business">Business name <span>*</span></label><input id="f-business" name="Име на бизнис" type="text" required></div>
+        <div class="field"><label for="f-website">Website</label><input id="f-website" name="Веб страна" type="text"></div>
+        <div class="field"><label for="f-contact">Contact person <span>*</span></label><input id="f-contact" name="Контакт лице" type="text" required></div>
+        <div class="field"><label for="f-phone">Phone <span>*</span></label><input id="f-phone" name="Телефон" type="tel" required></div>
+        <div class="field full"><label for="f-email">Email <span>*</span></label><input id="f-email" name="email" type="email" required></div>
+        <div class="field full">
+          <label>Products</label>
+          <p class="fine" style="margin:0 0 6px">Select the products and quantities you’re interested in</p>
+          
+          <div class="picker">
+          <div class="o-cat"><h4>Bread, Rolls &amp; Crackers</h4>
+            <label class="o-row"><span class="o-name">Brioche Burger Bun (to order)<small>50 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош бургер лепче (по нарачка) (50 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Caputo Rolls with Mixed Seeds<small>40 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Капуто земички со микс од семки (40 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Whole Wheat Caputo Rolls<small>35 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Интегрални капуто земички (35 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Olive Baguette Roll<small>60 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Олива багет пециво (60 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">1 kg Homemade Butter Crescent Rolls (30 pcs)<small>480 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="1 кг домашни путер кифлички (30 парчиња) (480 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">1 kg Whole Wheat Butter Crescent Rolls (30 pcs)<small>480 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="1 кг интегрални путер кифлички (30 парчиња) (480 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">1 kg Vegan Crescent Rolls (30 pcs)<small>380 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="1 кг посни кифлички (30 парчиња) (380 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">100% Whole Wheat Bread (~850 g)<small>160 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="100% интегрален леб ~850 гр (160 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Beer Cracker Pack (35 pcs)<small>400 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Пакет крекери со пиво (35 парчиња) (400 ден.)" aria-label="Qty"></span></label>
+          </div>
+          <div class="o-cat"><h4>Focaccia &amp; Pizza Focaccia</h4>
+            <label class="o-row"><span class="o-name">Focaccia with Cherry Tomatoes &amp; Rosemary<small>80 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со шери и рузмарин (80 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Focaccia with Cherry Tomatoes &amp; Parmesan<small>120 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со шери и пармезан (120 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Cacio e Pepe Focaccia<small>100 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача Cacio e Pepe (100 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Focaccia with Olives &amp; Tomato Sauce<small>100 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со маслинки и сос од домати (100 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Focaccia with Caramelized Onion &amp; Olives<small>100 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со карамелизиран кромид и маслинки (100 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Brunch Focaccia<small>150 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бранч фокача (150 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Focaccia with Pesto, Cherry Tomatoes &amp; Parmesan<small>140 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со песто, шери и пармезан (140 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Margherita Pizza Focaccia<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Пица фокача Маргарита (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Vegetarian Pizza Focaccia<small>140 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Пица фокача вегетариана (140 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Four-Cheese &amp; Zucchini Focaccia<small>140 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со 4 вида сирење и тиквички (140 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Focaccia with Cherry Tomatoes, Olives &amp; Rosemary<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со шери, маслинки и рузмарин (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Mortadella Pizza Focaccia<small>140 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Пица фокача со мортадела (140 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Focaccia with Cherry Tomatoes &amp; Italian Mortadella<small>140 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со шери домати и италијанска мортадела (140 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Chestnut Focaccia<small>150 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Костен фокача (150 ден.)" aria-label="Qty"></span></label>
+          </div>
+          <div class="o-cat"><h4>Sandwiches</h4>
+            <label class="o-row"><span class="o-name">Focaccia Sandwich — Veggie 1<small>170 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача сендвич — Веге 1 (170 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Focaccia Sandwich — Veggie 2<small>170 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача сендвич — Веге 2 (170 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Focaccia Sandwich — Fresh<small>190 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача сендвич — Свеж (190 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Focaccia Sandwich — Parmanelo<small>190 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача сендвич — Парманело (190 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Focaccia Sandwich — Mortadella<small>190 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача сендвич — Мортадела (190 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Caputo Sandwich — Vegan 2<small>120 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Капуто сендвич — Веган 2 (120 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Caputo Sandwich — Regular 1<small>140 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Капуто сендвич — Регулар 1 (140 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Caputo Sandwich — Regular 2<small>160 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Капуто сендвич — Регулар 2 (160 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Caputo Sandwich — Regular 3<small>140 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Капуто сендвич — Регулар 3 (140 ден.)" aria-label="Qty"></span></label>
+          </div>
+          <div class="o-cat"><h4>Savory Milk Pastries</h4>
+            <label class="o-row"><span class="o-name">Savory Babka with Mozzarella, Pesto &amp; Sun-Dried Tomato<small>100 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Солена бапка со моцарела, песто и сув домат (100 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Pastry with Chicken Breast &amp; Kashkaval<small>80 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Пециво со пилешки гради и кашкавал (80 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Milk Pastry with Spinach &amp; Urda<small>70 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Млечно пециво со спанаќ и урда (70 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Pastry with Italian Mortadella/Hungarian Salami &amp; Kashkaval<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Пециво со ит. мортадела/унг. салама и кашкавал (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Milk Pastry with Fresh Mushrooms<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Млечно пециво со свежи печурки (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Milk Pastry with Bacon<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Млечно пециво со сланинче (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Roll Sticks with Butter &amp; Mozzarella/Olives<small>80 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Ролл стапчиња со путер и моцарела/маслинки (80 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Filled Savory Pillows with Urda Cream<small>40 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Полнети солени перничиња со крем урда (40 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Cherry Tomato Pastry<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Шери пециво (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Milk Pizza Pastry<small>80 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Млечна пица пециво (80 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Greek Pastry<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Грчко пециво (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Homemade Proja (Red Pepper &amp; Cheese / Leek &amp; Cheese)<small>80 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Домашна проја (црвена пиперка и сирење / праз и сирење) (80 ден.)" aria-label="Qty"></span></label>
+          </div>
+          <div class="o-cat"><h4>Babkas &amp; Sweet Rolls</h4>
+            <label class="o-row"><span class="o-name">Briosh Chocolate Babka<small>80 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош бапка со чоколадо (80 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Cheesecake Raspberry Roll with Cream Cheese Glaze<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Чизкејк малина ролна со крем сирење глазура (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Cheesecake Cherry Roll with Cream Cheese Glaze<small>100 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Чизкејк вишна ролна со крем сирење глазура (100 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Lemon Blueberry Roll with Cream Cheese Glaze<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Лимон боровинка ролна со крем сирење глазура (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Almond Babka with White Chocolate<small>120 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош бадем бапка со бело чоколадо (120 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Christmas Babka<small>120 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош божиќна бапка (120 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Kozinjak “Eva”<small>120 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош козинјак „Ева“ (120 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Cardamom Babka<small>90 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош кардамон бапка (90 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Orange Cardamom Babka<small>120 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош портокал кардамон бапка (120 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Lemon-Poppy Seed Babka/Rolls<small>100 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош лимон-мак бапка/ролнички (100 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Orange-Poppy Seed Babka/Rolls<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош портокал-мак бапка/ролнички (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Choco-Hazelnut Babka<small>120 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош чоко-лешник бапка (120 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Ferrero Babka<small>120 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош фереро бапка (120 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Black Forest Babka<small>120 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош шварцвалд бапка (120 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Cinnamon Babka with Cream Cheese Glaze<small>90 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош бапка со цимет и крем сирење глазура (90 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Apple Cinnamon Roll with Cream Cheese Glaze<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Јаболка цимет ролна со крем сирење глазура (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Pumpkin Cinnamon Roll with Cream Cheese Glaze<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Тиква цимет ролна со крем сирење глазура (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Carrot Cinnamon Roll with Cream Cheese Glaze<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Морков цимет ролна со крем сирење глазура (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Chocolate &amp; Pistachio Spread Babka<small>120 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош бапка со чоколадо и фстак намаз (120 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Pistachio Babka with Pistachio Spread<small>140 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош бапка со фстаци и фстак намаз (140 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Walnut-Orange Babka<small>120 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош ореви-портокал бапка (120 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Choco-Orange Babka<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош чоко-портокал бапка (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Orange Roll with Homemade Orange Cream<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош портокал ролна со домашен крем од портокал (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Danish Cheesecake with Cherry<small>100 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош даниш чизкејк со вишна (100 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Danish with Choco-Hazelnut Spread &amp; Raspberries<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош даниш со чоко-лешник намаз и малини (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Danish Cheesecake with Homemade Apples &amp; Caramel<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош даниш чизкејк со домашни јаболки и карамел (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Choco-Poppy Seed Babka<small>100 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош чоко-мак бапка (100 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Lemon Roll with Cream Cheese Glaze<small>100 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Лимон ролна со крем сирење глазура (100 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Briosh Babka with Homemade Vanilla Cream &amp; Raisins<small>100 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош бапка со домашен ванила крем и суво грозје (100 ден.)" aria-label="Qty"></span></label>
+          </div>
+          <div class="o-cat"><h4>Muffins</h4>
+            <label class="o-row"><span class="o-name">Choco-Orange Muffin<small>70 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Чоко-портокал мафин (70 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Carrot Muffin with Cream Cheese Filling<small>80 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Мафин со морков и крем сирење фил (80 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Choco-Banana Muffin<small>80 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Чоко-банана мафин (80 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Raspberry Muffin with White/Dark Chocolate<small>80 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Мафин со малини и бело/црно чоколадо (80 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Lemon &amp; Poppy Seed Muffin<small>60 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Мафин со лимон и афион (мак) (60 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Strawberry &amp; White Chocolate Muffin<small>80 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Мафин со јагоди и бело чоколадо (80 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Cherry &amp; Dark Chocolate Muffin<small>70 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Мафин со вишна и црно чоколадо (70 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Blueberry &amp; White Chocolate Muffin<small>80 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Мафин со боровинки и бело чоколадо (80 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Raspberry, Pistachio &amp; White Chocolate Muffin<small>90 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Мафин со малини, фстак и бело чоколадо (90 ден.)" aria-label="Qty"></span></label>
+          </div>
+          <div class="o-cat"><h4>Cakes &amp; Tarts</h4>
+            <label class="o-row"><span class="o-name">French Madeleines<small>20 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Француски мадлен колачиња (20 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Vegan Honey Heart<small>60 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Посно медено срце (60 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Lazy Apple Pie<small>70 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Лења пита со домашни јаболки (70 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Choco-Banana Cake<small>90 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Чоко-банана торта (90 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Homemade Stretched Austrian Strudel with Pumpkin/Apples<small>100 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Домашна тегната австриска штрудла со тиква/јаболка (100 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Pumpkin Latte Cake<small>100 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Тиква лате торта (100 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Vegan Lemon Cake<small>80 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Веган лимон торта (80 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Carrot Cake with Cream Cheese Glaze<small>100 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Морков торта со крем сирење глазура (100 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Fruit Cake<small>90 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Овошен колач (90 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Crumble Fruit Cake<small>110 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Крамбл овошен колач (110 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Baked Ricotta Cheesecake Slice<small>160 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Парче печен рикота чизкејк (160 ден.)" aria-label="Qty"></span></label>
+          </div>
+          <div class="o-cat"><h4>Cookies</h4>
+            <label class="o-row"><span class="o-name">Brownie Cookies<small>20 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Брауни колачиња (20 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Lemon Cookies<small>20 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Лимон колачиња (20 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Lemon Twist Butter Cookies<small>20 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Лимон твист путер колачиња (20 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Orange Cookies<small>20 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Портокал колачиња (20 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">New Year’s Cookies<small>40 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Новогодишни колачиња (40 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Lemon/Orange Mix Cookies<small>20 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Лимон/портокал микс колачиња (20 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Vegan Honey Cinnamon Cookies<small>30 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Посни медени цимет колачиња (30 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Vegan Choco Cookies<small>40 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Посни чоко колачиња (40 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Butter Blueberry Cookies<small>40 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Путер боровинка колачиња (40 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Cookies with Homemade Apple Filling<small>30 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Колачиња со домашен фил од јаболки (30 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Butter Cookies with Black Sesame &amp; White Chocolate<small>40 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Путер колачиња со црн сусам и бело чоколадо (40 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Butter Cookies with Dark Chocolate &amp; Tahini<small>40 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Путер колачиња со црно чоколадо и таан (40 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Butter Cookies with Orange &amp; White Chocolate<small>40 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Путер колачиња со портокал и бело чоколадо (40 ден.)" aria-label="Qty"></span></label>
+            <label class="o-row"><span class="o-name">Butter Cookies with Dark Chocolate &amp; Green Fig Preserve<small>40 MKD</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Путер колачиња со црно чоколадо и слатко од зелена смоква (40 ден.)" aria-label="Qty"></span></label>
+          </div>
+          </div>
+          <p class="fine">The estimated total is indicative — final price and terms are confirmed with you.</p>
+        </div>
+        <div class="field"><label for="f-frequency">Frequency</label>
+          <select id="f-frequency" name="Фреквенција"><option value="">Select</option><option value="Секој ден">Every day</option><option value="Неколку пати неделно">Several times a week</option><option value="Неделно">Weekly</option><option value="Друго">Other</option></select></div>
+        <div class="field"><label for="f-address">Address / delivery location</label><input id="f-address" name="Адреса" type="text"></div>
+        <div class="field full"><label for="f-message">Message</label><textarea id="f-message" name="Порака"></textarea></div>
+      </div>
+      <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off">
+      <button class="btn primary-light" type="submit" style="margin-top:22px">Send request</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 24 C6 14, 14 8, 20 8 C26 8, 34 14, 34 24 C34 24, 27 20, 20 24 C13 28, 6 24, 6 24 Z" fill="var(--gold)" stroke="var(--cream-light)" stroke-width="1.2"/>
+          </svg>
+          Artisan Bakery Briosh
+        </div>
+        <p>A small artisan bakery in Skopje. Handmade every morning, no additives.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="meni.html">Menu</a>
+        <a href="restorani.html">Orders</a>
+        <a href="lokacija.html">Location</a>
+        <a href="kontakt.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+38971772113">+389 71 772 113</a>
+        <a href="https://maps.app.goo.gl/HyBx2LAXdoSZknzL7" target="_blank" rel="noopener">Pandil Shishkov St. 10, unit 8</a>
+        <a href="https://www.instagram.com/brioche.artisanbakery" target="_blank" rel="noopener">@briosh on Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Artisan Bakery Briosh · Skopje, North Macedonia</span>
+      <span>Mon–Fri 06:00–12:00</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
