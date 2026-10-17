@@ -3,93 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Мени — Артисан Пекара Бриош</title>
+<title>Мени - Артисан Пекара Бриош</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,460;9..144,600;9..144,680&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --cream:#FBEFD6;
-    --cream-light:#FFF9EC;
-    --crust:#3A2618;
-    --crust-soft:#6B4F3B;
-    --burnt:#C6482E;
-    --gold:#E8A33D;
-    --sage:#7C8A5C;
-    --line: rgba(58,38,24,0.14);
-    --ink:#1C120B;
-    --ink-soft:#2A1C12;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--cream);
-    color:var(--crust);
-    font-family:'Work Sans', sans-serif;
-    font-size:17px;
-    line-height:1.6;
-  }
-  h1,h2,h3{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    margin:0;
-    color:var(--crust);
-  }
-  a{color:inherit;}
-  img{max-width:100%;display:block;}
-  .wrap{
-    max-width:1140px;
-    margin:0 auto;
-    padding:0 32px;
-  }
-  .eyebrow{
-    text-transform:uppercase;
-    letter-spacing:0.14em;
-    font-size:12.5px;
-    font-weight:600;
-    color:var(--burnt);
-  }
-
-  /* ---------- top nav ---------- */
-  header.topnav{
-    position:sticky;
-    top:0;
-    z-index:40;
-    background:rgba(251,239,214,0.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-  }
-  .topnav .wrap{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:18px 32px;
-    gap:20px;
-  }
-  .brandmark{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:'Fraunces', serif;
-    font-size:19px;
-    font-weight:600;
-    text-decoration:none;
-  }
-  .brandmark svg{width:26px;height:26px;flex-shrink:0;}
-  nav.links{
-    display:flex;
-    gap:28px;
-    font-size:14.5px;
-  }
-  nav.links a{text-decoration:none;opacity:0.7;}
-  nav.links a:hover{opacity:1;}
-  nav.links a.active{opacity:1;color:var(--burnt);font-weight:600;}
-  .nav-social{display:flex;gap:14px;align-items:center;}
-  .nav-social a{opacity:0.75;}
-  .nav-social svg{width:17px;height:17px;}
-
-  /* ---------- page header (small dark banner) ---------- */
   .page-header{
     position:relative;
     background:
@@ -111,8 +29,6 @@
     font-size:16.5px;
     color:#E4D3B4;
   }
-
-  /* ---------- section shell ---------- */
   section{
     padding:86px 0;
     border-top:1px solid var(--line);
@@ -132,7 +48,6 @@
     font-size:16.5px;
   }
 
-  /* ---------- products ---------- */
   .product-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -170,7 +85,6 @@
     font-weight:600;
   }
 
-  /* ---------- note strip ---------- */
   .note-strip{
     background:var(--cream-light);
     border:1px solid var(--line);
@@ -195,66 +109,12 @@
   .btn.primary-light{background:var(--crust);color:var(--cream-light);border-color:var(--crust);}
   .btn.ghost{background:transparent;color:var(--crust);border-color:var(--crust);}
 
-  /* ---------- footer ---------- */
-  footer{
-    background:var(--ink);
-    color:#C9B58D;
-    padding:64px 0 36px;
-  }
-  .footer-grid{
-    display:grid;
-    grid-template-columns:1.4fr 1fr 1fr;
-    gap:40px;
-    padding-bottom:40px;
-    border-bottom:1px solid rgba(251,239,214,0.12);
-  }
-  .footer-brand{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:'Fraunces', serif;
-    font-size:19px;
-    font-weight:600;
-    color:var(--cream-light);
-  }
-  .footer-brand svg{width:24px;height:24px;}
-  .footer-grid p{margin:14px 0 0;font-size:14px;max-width:34ch;}
-  .footer-col h4{
-    font-family:'Work Sans', sans-serif;
-    font-size:12.5px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:#E9D8B8;
-    margin:0 0 16px;
-    font-weight:600;
-  }
-  .footer-col a{
-    display:block;
-    text-decoration:none;
-    font-size:14.5px;
-    color:#C9B58D;
-    margin-bottom:11px;
-  }
-  .footer-col a:hover{color:var(--cream-light);}
-  .footer-bottom{
-    padding-top:26px;
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:10px;
-    font-size:13px;
-    color:#8C7A5C;
-  }
-
   @media (max-width:900px){
     nav.links{display:none;}
     .product-grid{grid-template-columns:repeat(2,1fr);}
     .footer-grid{grid-template-columns:1fr;}
   }
 
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-  }
 </style>
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="stylesheet" href="extra.css">
@@ -264,7 +124,7 @@
 <header class="topnav">
   <div class="wrap">
     <a class="brandmark" href="index.html">
-      <img class="brand-logo" src="img/logo.png" alt="Бриош — Артисан пекара" width="40" height="52">
+      <img class="brand-logo" src="img/logo.png" alt="Бриош - Артисан пекара" width="40" height="52">
       Бриош
     </a>
     <nav class="links">
@@ -290,7 +150,7 @@
   <div class="wrap">
     <span class="eyebrow">Што печеме</span>
     <h1>Мени со цени</h1>
-    <p>Понудата не е фиксна — се менува од недела во недела, во зависност од сезоната и расположението на Ева.</p>
+    <p>Понудата не е фиксна - се менува од недела во недела, во зависност од сезоната и расположението на Ева.</p>
   </div>
 </div>
 
@@ -411,39 +271,39 @@
     <div class="menu-cat" id="c-sandwiches">
       <h2>Сендвичи</h2>
       <div class="m-item">
-        <div class="m-main"><h3>Фокача сендвич — Веге 1</h3><p>Фокача лепче, хумус, маслинки, шери домат, рукола, посен кашкавал (по желба)</p></div>
+        <div class="m-main"><h3>Фокача сендвич - Веге 1</h3><p>Фокача лепче, хумус, маслинки, шери домат, рукола, посен кашкавал (по желба)</p></div>
         <div class="m-price">170 ден.</div>
       </div>
       <div class="m-item">
-        <div class="m-main"><h3>Фокача сендвич — Веге 2</h3><p>Фокача лепче, хумус, карамелизиран кромид, маслинки</p></div>
+        <div class="m-main"><h3>Фокача сендвич - Веге 2</h3><p>Фокача лепче, хумус, карамелизиран кромид, маслинки</p></div>
         <div class="m-price">170 ден.</div>
       </div>
       <div class="m-item">
-        <div class="m-main"><h3>Фокача сендвич — Свеж</h3><p>Фокача лепче, песто росо, пилешко филе, пармезан, рукола, шери домат</p></div>
+        <div class="m-main"><h3>Фокача сендвич - Свеж</h3><p>Фокача лепче, песто росо, пилешко филе, пармезан, рукола, шери домат</p></div>
         <div class="m-price">190 ден.</div>
       </div>
       <div class="m-item">
-        <div class="m-main"><h3>Фокача сендвич — Парманело</h3><p>Фокача лепче, крем сирење, парманело, шери домат, пармезан, рукола</p></div>
+        <div class="m-main"><h3>Фокача сендвич - Парманело</h3><p>Фокача лепче, крем сирење, парманело, шери домат, пармезан, рукола</p></div>
         <div class="m-price">190 ден.</div>
       </div>
       <div class="m-item">
-        <div class="m-main"><h3>Фокача сендвич — Мортадела</h3><p>Фокача лепче, крем сирење (песто сос), мортадела со фстак, шери домат, пармезан</p></div>
+        <div class="m-main"><h3>Фокача сендвич - Мортадела</h3><p>Фокача лепче, крем сирење (песто сос), мортадела со фстак, шери домат, пармезан</p></div>
         <div class="m-price">190 ден.</div>
       </div>
       <div class="m-item">
-        <div class="m-main"><h3>Капуто сендвич — Веган 2</h3><p>Капуто земичка, хумус, веган кашкавал, корнишони, свежа краставица/домат/рукола</p></div>
+        <div class="m-main"><h3>Капуто сендвич - Веган 2</h3><p>Капуто земичка, хумус, веган кашкавал, корнишони, свежа краставица/домат/рукола</p></div>
         <div class="m-price">120 ден.</div>
       </div>
       <div class="m-item">
-        <div class="m-main"><h3>Капуто сендвич — Регулар 1</h3><p>Капуто земичка, павлака, пилешко филе, свежа краставица (домат), рукола</p></div>
+        <div class="m-main"><h3>Капуто сендвич - Регулар 1</h3><p>Капуто земичка, павлака, пилешко филе, свежа краставица (домат), рукола</p></div>
         <div class="m-price">140 ден.</div>
       </div>
       <div class="m-item">
-        <div class="m-main"><h3>Капуто сендвич — Регулар 2</h3><p>Капуто земичка, рикота, мортадела, домат, рукола</p></div>
+        <div class="m-main"><h3>Капуто сендвич - Регулар 2</h3><p>Капуто земичка, рикота, мортадела, домат, рукола</p></div>
         <div class="m-price">160 ден.</div>
       </div>
       <div class="m-item">
-        <div class="m-main"><h3>Капуто сендвич — Регулар 3</h3><p>Капуто земичка, крем сирење, грилувана тиквица, кашкавал, свежа краставица (рукола)</p></div>
+        <div class="m-main"><h3>Капуто сендвич - Регулар 3</h3><p>Капуто земичка, крем сирење, грилувана тиквица, кашкавал, свежа краставица (рукола)</p></div>
         <div class="m-price">140 ден.</div>
       </div>
     </div>
@@ -779,7 +639,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <img class="brand-logo" src="img/logo-light.png" alt="Бриош — Артисан пекара" width="52" height="68">
+          <img class="brand-logo" src="img/logo-light.png" alt="Бриош - Артисан пекара" width="52" height="68">
           Артисан Пекара Бриош
         </div>
         <p>Мала занаетчиска пекара во Скопје. Рачно печена, секое утро, без адитиви.</p>

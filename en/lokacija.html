@@ -3,93 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Location — Artisan Bakery Briosh</title>
+<title>Location - Artisan Bakery Briosh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,460;9..144,600;9..144,680&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --cream:#FBEFD6;
-    --cream-light:#FFF9EC;
-    --crust:#3A2618;
-    --crust-soft:#6B4F3B;
-    --burnt:#C6482E;
-    --gold:#E8A33D;
-    --sage:#7C8A5C;
-    --line: rgba(58,38,24,0.14);
-    --ink:#1C120B;
-    --ink-soft:#2A1C12;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--cream);
-    color:var(--crust);
-    font-family:'Work Sans', sans-serif;
-    font-size:17px;
-    line-height:1.6;
-  }
-  h1,h2,h3{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    margin:0;
-    color:var(--crust);
-  }
-  a{color:inherit;}
-  img{max-width:100%;display:block;}
-  .wrap{
-    max-width:1140px;
-    margin:0 auto;
-    padding:0 32px;
-  }
-  .eyebrow{
-    text-transform:uppercase;
-    letter-spacing:0.14em;
-    font-size:12.5px;
-    font-weight:600;
-    color:var(--burnt);
-  }
-
-  /* ---------- top nav ---------- */
-  header.topnav{
-    position:sticky;
-    top:0;
-    z-index:40;
-    background:rgba(251,239,214,0.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-  }
-  .topnav .wrap{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:18px 32px;
-    gap:20px;
-  }
-  .brandmark{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:'Fraunces', serif;
-    font-size:19px;
-    font-weight:600;
-    text-decoration:none;
-  }
-  .brandmark svg{width:26px;height:26px;flex-shrink:0;}
-  nav.links{
-    display:flex;
-    gap:28px;
-    font-size:14.5px;
-  }
-  nav.links a{text-decoration:none;opacity:0.7;}
-  nav.links a:hover{opacity:1;}
-  nav.links a.active{opacity:1;color:var(--burnt);font-weight:600;}
-  .nav-social{display:flex;gap:14px;align-items:center;}
-  .nav-social a{opacity:0.75;}
-  .nav-social svg{width:17px;height:17px;}
-
-  /* ---------- page header (small dark banner) ---------- */
   .page-header{
     position:relative;
     background:
@@ -112,12 +30,10 @@
     color:#E4D3B4;
   }
 
-  /* ---------- section shell ---------- */
   section{
     padding:86px 0;
   }
 
-  /* ---------- location ---------- */
   .visit{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -185,67 +101,12 @@
   .btn.ghost{background:transparent;color:var(--crust);border-color:var(--crust);}
   .cta-line{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;}
 
-  /* ---------- footer ---------- */
-  footer{
-    background:var(--ink);
-    color:#C9B58D;
-    padding:64px 0 36px;
-    border-top:1px solid var(--line);
-  }
-  .footer-grid{
-    display:grid;
-    grid-template-columns:1.4fr 1fr 1fr;
-    gap:40px;
-    padding-bottom:40px;
-    border-bottom:1px solid rgba(251,239,214,0.12);
-  }
-  .footer-brand{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:'Fraunces', serif;
-    font-size:19px;
-    font-weight:600;
-    color:var(--cream-light);
-  }
-  .footer-brand svg{width:24px;height:24px;}
-  .footer-grid p{margin:14px 0 0;font-size:14px;max-width:34ch;}
-  .footer-col h4{
-    font-family:'Work Sans', sans-serif;
-    font-size:12.5px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:#E9D8B8;
-    margin:0 0 16px;
-    font-weight:600;
-  }
-  .footer-col a{
-    display:block;
-    text-decoration:none;
-    font-size:14.5px;
-    color:#C9B58D;
-    margin-bottom:11px;
-  }
-  .footer-col a:hover{color:var(--cream-light);}
-  .footer-bottom{
-    padding-top:26px;
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:10px;
-    font-size:13px;
-    color:#8C7A5C;
-  }
-
   @media (max-width:900px){
     nav.links{display:none;}
     .visit{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;}
   }
 
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-  }
 </style>
 <link rel="icon" type="image/png" href="../img/favicon.png">
 <link rel="stylesheet" href="../extra.css">
@@ -255,7 +116,7 @@
 <header class="topnav">
   <div class="wrap">
     <a class="brandmark" href="index.html">
-      <img class="brand-logo" src="../img/logo.png" alt="Briosh — Artisan Bakery" width="40" height="52">
+      <img class="brand-logo" src="../img/logo.png" alt="Briosh - Artisan Bakery" width="40" height="52">
       Briosh
     </a>
     <nav class="links">
@@ -281,7 +142,7 @@
   <div class="wrap">
     <span class="eyebrow">Where to find us</span>
     <h1>Come early</h1>
-    <p>Opening hours are short and the selection is limited — it’s best to come in the first morning hours.</p>
+    <p>Opening hours are short and the selection is limited - it’s best to come in the first morning hours.</p>
   </div>
 </div>
 
@@ -294,7 +155,7 @@
           <div class="addr">Pandil Shishkov St. 10, unit 8, Skopje</div>
           <div class="hours">
             <span>Mon–Fri 06:00 – 12:00</span>
-            <span>Saturday and Sunday — closed</span>
+            <span>Saturday and Sunday - closed</span>
             <span><a href="tel:+38971772113" style="color:inherit;text-decoration:none;">+389 71 772 113</a></span>
           </div>
           <a class="map-link" href="https://maps.app.goo.gl/HyBx2LAXdoSZknzL7" target="_blank" rel="noopener">Open in Google Maps →</a>
@@ -329,7 +190,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <img class="brand-logo" src="../img/logo-light.png" alt="Briosh — Artisan Bakery" width="52" height="68">
+          <img class="brand-logo" src="../img/logo-light.png" alt="Briosh - Artisan Bakery" width="52" height="68">
           Artisan Bakery Briosh
         </div>
         <p>A small artisan bakery in Skopje. Handmade every morning, no additives.</p>

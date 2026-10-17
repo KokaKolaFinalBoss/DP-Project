@@ -1,17 +1,125 @@
-/* Briosh — extra styles (new pages + language button + mobile nav). Uses the CSS variables defined in each page. */
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--crust);
+    font-family:'Work Sans', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    color:var(--crust);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{
+    max-width:1140px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--burnt);
+  }
+
+  header.topnav{
+    position:sticky;
+    top:0;
+    z-index:40;
+    background:rgba(251,239,214,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .topnav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 32px;
+    gap:20px;
+  }
+  .brandmark{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:600;
+    text-decoration:none;
+  }
+  .brandmark svg{width:26px;height:26px;flex-shrink:0;}
+  nav.links{
+    display:flex;
+    gap:28px;
+    font-size:14.5px;
+  }
+  nav.links a{text-decoration:none;opacity:0.7;}
+  nav.links a:hover{opacity:1;}
+  nav.links a.active{opacity:1;color:var(--burnt);font-weight:600;}
+  .nav-social{display:flex;gap:14px;align-items:center;}
+  .nav-social a{opacity:0.75;}
+  .nav-social svg{width:17px;height:17px;}
+
+  footer{
+    background:var(--ink);
+    color:#C9B58D;
+    padding:64px 0 36px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:40px;
+    border-bottom:1px solid rgba(251,239,214,0.12);
+  }
+  .footer-brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:600;
+    color:var(--cream-light);
+  }
+  .footer-brand svg{width:24px;height:24px;}
+  .footer-grid p{margin:14px 0 0;font-size:14px;max-width:34ch;}
+  .footer-col h4{
+    font-family:'Work Sans', sans-serif;
+    font-size:12.5px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:#E9D8B8;
+    margin:0 0 16px;
+    font-weight:600;
+  }
+  .footer-col a{
+    display:block;
+    text-decoration:none;
+    font-size:14.5px;
+    color:#C9B58D;
+    margin-bottom:11px;
+  }
+  .footer-col a:hover{color:var(--cream-light);}
+  .footer-bottom{
+    padding-top:26px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size:13px;
+    color:#8C7A5C;
+  }
+
 .lang-btn{font:600 13px 'Work Sans',sans-serif;letter-spacing:.06em;color:var(--crust);background:transparent;border:1px solid var(--crust);border-radius:3px;padding:6px 11px;cursor:pointer}
 .lang-btn:hover{background:var(--crust);color:var(--cream-light)}
 .nav-social{gap:12px}
 
-/* nav stays reachable on mobile */
-@media (max-width:900px){
-  .topnav .wrap{flex-wrap:wrap;padding:12px 20px;row-gap:8px}
-  nav.links{display:flex !important;order:3;width:100%;gap:20px;overflow-x:auto;white-space:nowrap;font-size:14px}
-  .wrap{padding:0 20px}
-  section{padding:56px 0}
-}
-
-/* menu page */
 .menu-tools{position:sticky;top:64px;z-index:30;background:var(--cream);padding:14px 0;border-bottom:1px solid var(--line);margin-bottom:34px}
 .menu-nav{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;margin-top:12px}
 .menu-nav a{flex-shrink:0;text-decoration:none;font-size:14px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--cream-light)}
@@ -25,14 +133,12 @@
 .m-price{font-family:'Fraunces',serif;font-weight:600;font-size:18px;white-space:nowrap;color:var(--burnt)}
 .muted{color:var(--crust-soft)}
 
-/* features strip (restaurants page) */
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .feature{background:var(--cream-light);border:1px solid var(--line);border-radius:6px;padding:26px}
 .feature h3{font-size:19px}
 .feature p{margin:10px 0 0;font-size:14.5px;color:var(--crust-soft)}
 @media (max-width:900px){.features{grid-template-columns:1fr}}
 
-/* forms */
 .form-card{background:var(--cream-light);border:1px solid var(--line);border-radius:6px;padding:34px}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
 .field{display:flex;flex-direction:column;gap:6px}
@@ -48,7 +154,6 @@
 .btn{cursor:pointer;font-family:inherit}
 @media (max-width:700px){.form-grid{grid-template-columns:1fr}.form-card{padding:22px}}
 
-/* order picker */
 .picker{border:1px solid var(--line);border-radius:6px;background:#fff;max-height:560px;overflow-y:auto;padding:6px 18px 12px}
 .o-cat h4{font-family:'Fraunces',serif;font-size:17px;margin:20px 0 4px;color:var(--burnt)}
 .o-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid var(--line)}
@@ -63,7 +168,6 @@
 .order-summary{position:sticky;bottom:0;margin-top:14px;padding:12px 16px;background:var(--crust);color:var(--cream-light);border-radius:4px;font-size:15px;font-weight:500}
 .fine{font-size:13px;color:var(--crust-soft);margin-top:10px}
 
-/* contact layout + home teaser */
 .contact-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:50px;align-items:start}
 @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
 .contact-card p{margin:10px 0 0;font-size:15px;color:var(--crust-soft)}
@@ -77,19 +181,16 @@
 .contact-card h3{font-size:22px}
 @media (max-width:900px){.menu-tools{top:92px}.menu-cat{scroll-margin-top:210px}}
 
-/* no-JS tweaks */
 .lang-btn{text-decoration:none;display:inline-block;line-height:1.2}
 .o-row{cursor:pointer}
 .qty input{border:1px solid var(--line);border-radius:4px;width:76px;-moz-appearance:auto;appearance:auto}
 .qty input::-webkit-outer-spin-button,.qty input::-webkit-inner-spin-button{-webkit-appearance:auto}
 
-/* logo images (replace old inline SVG marks) */
 .brand-logo{display:block;width:auto;flex-shrink:0}
 .brandmark .brand-logo{height:46px}
 .footer-brand .brand-logo{height:72px}
 .footer-brand{align-items:center}
 
-/* home: "for restaurants & businesses" — text left, logo right (like panpan.mk) */
 .teaser{text-align:left}
 .teaser-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
 .teaser-text p{margin-left:0;margin-right:0}
@@ -100,3 +201,16 @@
   .teaser-logo{order:-1}
   .teaser-logo img{max-width:200px}
 }
+
+:root{
+    --cream:#FBEFD6;
+    --cream-light:#FFF9EC;
+    --crust:#3A2618;
+    --crust-soft:#6B4F3B;
+    --burnt:#C6482E;
+    --gold:#E8A33D;
+    --sage:#7C8A5C;
+    --line: rgba(58,38,24,0.14);
+    --ink:#1C120B;
+    --ink-soft:#2A1C12;
+  }

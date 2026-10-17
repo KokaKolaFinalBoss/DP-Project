@@ -3,93 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Нарачај — Артисан Пекара Бриош</title>
+<title>Нарачај - Артисан Пекара Бриош</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,460;9..144,600;9..144,680&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --cream:#FBEFD6;
-    --cream-light:#FFF9EC;
-    --crust:#3A2618;
-    --crust-soft:#6B4F3B;
-    --burnt:#C6482E;
-    --gold:#E8A33D;
-    --sage:#7C8A5C;
-    --line: rgba(58,38,24,0.14);
-    --ink:#1C120B;
-    --ink-soft:#2A1C12;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--cream);
-    color:var(--crust);
-    font-family:'Work Sans', sans-serif;
-    font-size:17px;
-    line-height:1.6;
-  }
-  h1,h2,h3{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    margin:0;
-    color:var(--crust);
-  }
-  a{color:inherit;}
-  img{max-width:100%;display:block;}
-  .wrap{
-    max-width:1140px;
-    margin:0 auto;
-    padding:0 32px;
-  }
-  .eyebrow{
-    text-transform:uppercase;
-    letter-spacing:0.14em;
-    font-size:12.5px;
-    font-weight:600;
-    color:var(--burnt);
-  }
-
-  /* ---------- top nav ---------- */
-  header.topnav{
-    position:sticky;
-    top:0;
-    z-index:40;
-    background:rgba(251,239,214,0.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-  }
-  .topnav .wrap{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:18px 32px;
-    gap:20px;
-  }
-  .brandmark{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:'Fraunces', serif;
-    font-size:19px;
-    font-weight:600;
-    text-decoration:none;
-  }
-  .brandmark svg{width:26px;height:26px;flex-shrink:0;}
-  nav.links{
-    display:flex;
-    gap:28px;
-    font-size:14.5px;
-  }
-  nav.links a{text-decoration:none;opacity:0.7;}
-  nav.links a:hover{opacity:1;}
-  nav.links a.active{opacity:1;color:var(--burnt);font-weight:600;}
-  .nav-social{display:flex;gap:14px;align-items:center;}
-  .nav-social a{opacity:0.75;}
-  .nav-social svg{width:17px;height:17px;}
-
-  /* ---------- page header (small dark banner) ---------- */
   .page-header{
     position:relative;
     background:
@@ -112,7 +30,6 @@
     color:#E4D3B4;
   }
 
-  /* ---------- section shell ---------- */
   section{
     padding:86px 0;
     border-top:1px solid var(--line);
@@ -132,7 +49,6 @@
     font-size:16.5px;
   }
 
-  /* ---------- products ---------- */
   .product-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -170,7 +86,6 @@
     font-weight:600;
   }
 
-  /* ---------- note strip ---------- */
   .note-strip{
     background:var(--cream-light);
     border:1px solid var(--line);
@@ -195,66 +110,12 @@
   .btn.primary-light{background:var(--crust);color:var(--cream-light);border-color:var(--crust);}
   .btn.ghost{background:transparent;color:var(--crust);border-color:var(--crust);}
 
-  /* ---------- footer ---------- */
-  footer{
-    background:var(--ink);
-    color:#C9B58D;
-    padding:64px 0 36px;
-  }
-  .footer-grid{
-    display:grid;
-    grid-template-columns:1.4fr 1fr 1fr;
-    gap:40px;
-    padding-bottom:40px;
-    border-bottom:1px solid rgba(251,239,214,0.12);
-  }
-  .footer-brand{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:'Fraunces', serif;
-    font-size:19px;
-    font-weight:600;
-    color:var(--cream-light);
-  }
-  .footer-brand svg{width:24px;height:24px;}
-  .footer-grid p{margin:14px 0 0;font-size:14px;max-width:34ch;}
-  .footer-col h4{
-    font-family:'Work Sans', sans-serif;
-    font-size:12.5px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:#E9D8B8;
-    margin:0 0 16px;
-    font-weight:600;
-  }
-  .footer-col a{
-    display:block;
-    text-decoration:none;
-    font-size:14.5px;
-    color:#C9B58D;
-    margin-bottom:11px;
-  }
-  .footer-col a:hover{color:var(--cream-light);}
-  .footer-bottom{
-    padding-top:26px;
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:10px;
-    font-size:13px;
-    color:#8C7A5C;
-  }
-
   @media (max-width:900px){
     nav.links{display:none;}
     .product-grid{grid-template-columns:repeat(2,1fr);}
     .footer-grid{grid-template-columns:1fr;}
   }
 
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-  }
 </style>
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="stylesheet" href="extra.css">
@@ -264,7 +125,7 @@
 <header class="topnav">
   <div class="wrap">
     <a class="brandmark" href="index.html">
-      <img class="brand-logo" src="img/logo.png" alt="Бриош — Артисан пекара" width="40" height="52">
+      <img class="brand-logo" src="img/logo.png" alt="Бриош - Артисан пекара" width="40" height="52">
       Бриош
     </a>
     <nav class="links">
@@ -290,7 +151,7 @@
   <div class="wrap">
     <span class="eyebrow">Деловно снабдување</span>
     <h1>Свеж леб и пецива за вашиот бизнис</h1>
-    <p>Изберете производи од менито, внесете количини и испратете барање — ние ќе ви се јавиме со потврда и услови.</p>
+    <p>Изберете производи од менито, внесете количини и испратете барање - ние ќе ви се јавиме со потврда и услови.</p>
   </div>
 </div>
 
@@ -298,8 +159,8 @@
   <div class="wrap">
     <div class="features">
       <div class="feature"><h3>Свежо секое утро</h3><p>Печено истиот ден, во мали серии, пред зори.</p></div>
-      <div class="feature"><h3>Без адитиви</h3><p>Брашно, вода, време и трпение — без конзерванси.</p></div>
-      <div class="feature"><h3>Големи нарачки</h3><p>Од леб и пецива до торти и колачиња — сѐ од менито.</p></div>
+      <div class="feature"><h3>Без адитиви</h3><p>Брашно, вода, време и трпение - без конзерванси.</p></div>
+      <div class="feature"><h3>Големи нарачки</h3><p>Од леб и пецива до торти и колачиња - сѐ од менито.</p></div>
     </div>
   </div>
 </section>
@@ -309,10 +170,9 @@
     <div class="section-head">
       <span class="eyebrow">Контактирајте нè</span>
       <h2>Барање за нарачка</h2>
-      <p>Б2Б барање</p>
     </div>
-    <form class="form-card" action="https://formsubmit.co/info@example.com" method="POST">
-      <input type="hidden" name="_subject" value="Нова нарачка за ресторан — Бриош">
+    <form class="form-card" method="POST">
+      <input type="hidden" name="_subject" value="Нова нарачка за ресторан - Бриош">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
       <div class="form-grid">
@@ -327,130 +187,130 @@
           
           <div class="picker">
           <div class="o-cat"><h4>Леб, пецива и крекери</h4>
-            <label class="o-row"><span class="o-name">Бриош бургер лепче (по нарачка)<small>50 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош бургер лепче (по нарачка) (50 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Капуто земички со микс од семки<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Капуто земички со микс од семки (40 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Интегрални капуто земички<small>35 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Интегрални капуто земички (35 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Олива багет пециво<small>60 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Олива багет пециво (60 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">1 кг домашни путер кифлички (30 парчиња)<small>480 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="1 кг домашни путер кифлички (30 парчиња) (480 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">1 кг интегрални путер кифлички (30 парчиња)<small>480 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="1 кг интегрални путер кифлички (30 парчиња) (480 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">1 кг посни кифлички (30 парчиња)<small>380 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="1 кг посни кифлички (30 парчиња) (380 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">100% интегрален леб ~850 гр<small>160 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="100% интегрален леб ~850 гр (160 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Пакет крекери со пиво (35 парчиња)<small>400 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Пакет крекери со пиво (35 парчиња) (400 ден.)" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош бургер лепче (по нарачка)<small>50 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Капуто земички со микс од семки<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Интегрални капуто земички<small>35 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Олива багет пециво<small>60 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">1 кг домашни путер кифлички (30 парчиња)<small>480 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">1 кг интегрални путер кифлички (30 парчиња)<small>480 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">1 кг посни кифлички (30 парчиња)<small>380 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">100% интегрален леб ~850 гр<small>160 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Пакет крекери со пиво (35 парчиња)<small>400 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
           </div>
           <div class="o-cat"><h4>Фокачи и пица фокачи</h4>
-            <label class="o-row"><span class="o-name">Фокача со шери и рузмарин<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со шери и рузмарин (80 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Фокача со шери и пармезан<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со шери и пармезан (120 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Фокача Cacio e Pepe<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача Cacio e Pepe (100 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Фокача со маслинки и сос од домати<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со маслинки и сос од домати (100 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Фокача со карамелизиран кромид и маслинки<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со карамелизиран кромид и маслинки (100 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бранч фокача<small>150 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бранч фокача (150 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Фокача со песто, шери и пармезан<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со песто, шери и пармезан (140 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Пица фокача Маргарита<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Пица фокача Маргарита (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Пица фокача вегетариана<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Пица фокача вегетариана (140 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Фокача со 4 вида сирење и тиквички<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со 4 вида сирење и тиквички (140 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Фокача со шери, маслинки и рузмарин<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со шери, маслинки и рузмарин (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Пица фокача со мортадела<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Пица фокача со мортадела (140 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Фокача со шери домати и италијанска мортадела<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача со шери домати и италијанска мортадела (140 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Костен фокача<small>150 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Костен фокача (150 ден.)" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Фокача со шери и рузмарин<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Фокача со шери и пармезан<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Фокача Cacio e Pepe<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Фокача со маслинки и сос од домати<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Фокача со карамелизиран кромид и маслинки<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бранч фокача<small>150 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Фокача со песто, шери и пармезан<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Пица фокача Маргарита<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Пица фокача вегетариана<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Фокача со 4 вида сирење и тиквички<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Фокача со шери, маслинки и рузмарин<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Пица фокача со мортадела<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Фокача со шери домати и италијанска мортадела<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Костен фокача<small>150 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
           </div>
           <div class="o-cat"><h4>Сендвичи</h4>
-            <label class="o-row"><span class="o-name">Фокача сендвич — Веге 1<small>170 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача сендвич — Веге 1 (170 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Фокача сендвич — Веге 2<small>170 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача сендвич — Веге 2 (170 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Фокача сендвич — Свеж<small>190 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача сендвич — Свеж (190 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Фокача сендвич — Парманело<small>190 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача сендвич — Парманело (190 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Фокача сендвич — Мортадела<small>190 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Фокача сендвич — Мортадела (190 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Капуто сендвич — Веган 2<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Капуто сендвич — Веган 2 (120 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Капуто сендвич — Регулар 1<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Капуто сендвич — Регулар 1 (140 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Капуто сендвич — Регулар 2<small>160 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Капуто сендвич — Регулар 2 (160 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Капуто сендвич — Регулар 3<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Капуто сендвич — Регулар 3 (140 ден.)" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Фокача сендвич - Веге 1<small>170 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Фокача сендвич - Веге 2<small>170 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Фокача сендвич - Свеж<small>190 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Фокача сендвич - Парманело<small>190 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Фокача сендвич - Мортадела<small>190 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Капуто сендвич - Веган 2<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Капуто сендвич - Регулар 1<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Капуто сендвич - Регулар 2<small>160 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Капуто сендвич - Регулар 3<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
           </div>
           <div class="o-cat"><h4>Млечни пецива</h4>
-            <label class="o-row"><span class="o-name">Солена бапка со моцарела, песто и сув домат<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Солена бапка со моцарела, песто и сув домат (100 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Пециво со пилешки гради и кашкавал<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Пециво со пилешки гради и кашкавал (80 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Млечно пециво со спанаќ и урда<small>70 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Млечно пециво со спанаќ и урда (70 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Пециво со ит. мортадела/унг. салама и кашкавал<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Пециво со ит. мортадела/унг. салама и кашкавал (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Млечно пециво со свежи печурки<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Млечно пециво со свежи печурки (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Млечно пециво со сланинче<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Млечно пециво со сланинче (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Ролл стапчиња со путер и моцарела/маслинки<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Ролл стапчиња со путер и моцарела/маслинки (80 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Полнети солени перничиња со крем урда<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Полнети солени перничиња со крем урда (40 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Шери пециво<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Шери пециво (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Млечна пица пециво<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Млечна пица пециво (80 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Грчко пециво<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Грчко пециво (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Домашна проја (црвена пиперка и сирење / праз и сирење)<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Домашна проја (црвена пиперка и сирење / праз и сирење) (80 ден.)" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Солена бапка со моцарела, песто и сув домат<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Пециво со пилешки гради и кашкавал<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Млечно пециво со спанаќ и урда<small>70 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Пециво со ит. мортадела/унг. салама и кашкавал<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Млечно пециво со свежи печурки<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Млечно пециво со сланинче<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Ролл стапчиња со путер и моцарела/маслинки<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Полнети солени перничиња со крем урда<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Шери пециво<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Млечна пица пециво<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Грчко пециво<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Домашна проја (црвена пиперка и сирење / праз и сирење)<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
           </div>
           <div class="o-cat"><h4>Бапки и ролнички</h4>
-            <label class="o-row"><span class="o-name">Бриош бапка со чоколадо<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош бапка со чоколадо (80 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Чизкејк малина ролна со крем сирење глазура<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Чизкејк малина ролна со крем сирење глазура (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Чизкејк вишна ролна со крем сирење глазура<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Чизкејк вишна ролна со крем сирење глазура (100 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Лимон боровинка ролна со крем сирење глазура<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Лимон боровинка ролна со крем сирење глазура (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош бадем бапка со бело чоколадо<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош бадем бапка со бело чоколадо (120 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош божиќна бапка<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош божиќна бапка (120 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош козинјак „Ева“<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош козинјак „Ева“ (120 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош кардамон бапка<small>90 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош кардамон бапка (90 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош портокал кардамон бапка<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош портокал кардамон бапка (120 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош лимон-мак бапка/ролнички<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош лимон-мак бапка/ролнички (100 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош портокал-мак бапка/ролнички<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош портокал-мак бапка/ролнички (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош чоко-лешник бапка<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош чоко-лешник бапка (120 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош фереро бапка<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош фереро бапка (120 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош шварцвалд бапка<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош шварцвалд бапка (120 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош бапка со цимет и крем сирење глазура<small>90 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош бапка со цимет и крем сирење глазура (90 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Јаболка цимет ролна со крем сирење глазура<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Јаболка цимет ролна со крем сирење глазура (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Тиква цимет ролна со крем сирење глазура<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Тиква цимет ролна со крем сирење глазура (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Морков цимет ролна со крем сирење глазура<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Морков цимет ролна со крем сирење глазура (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош бапка со чоколадо и фстак намаз<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош бапка со чоколадо и фстак намаз (120 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош бапка со фстаци и фстак намаз<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош бапка со фстаци и фстак намаз (140 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош ореви-портокал бапка<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош ореви-портокал бапка (120 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош чоко-портокал бапка<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош чоко-портокал бапка (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош портокал ролна со домашен крем од портокал<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош портокал ролна со домашен крем од портокал (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош даниш чизкејк со вишна<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош даниш чизкејк со вишна (100 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош даниш со чоко-лешник намаз и малини<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош даниш со чоко-лешник намаз и малини (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош даниш чизкејк со домашни јаболки и карамел<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош даниш чизкејк со домашни јаболки и карамел (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош чоко-мак бапка<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош чоко-мак бапка (100 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Лимон ролна со крем сирење глазура<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Лимон ролна со крем сирење глазура (100 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Бриош бапка со домашен ванила крем и суво грозје<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Бриош бапка со домашен ванила крем и суво грозје (100 ден.)" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош бапка со чоколадо<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Чизкејк малина ролна со крем сирење глазура<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Чизкејк вишна ролна со крем сирење глазура<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Лимон боровинка ролна со крем сирење глазура<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош бадем бапка со бело чоколадо<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош божиќна бапка<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош козинјак „Ева“<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош кардамон бапка<small>90 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош портокал кардамон бапка<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош лимон-мак бапка/ролнички<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош портокал-мак бапка/ролнички<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош чоко-лешник бапка<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош фереро бапка<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош шварцвалд бапка<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош бапка со цимет и крем сирење глазура<small>90 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Јаболка цимет ролна со крем сирење глазура<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Тиква цимет ролна со крем сирење глазура<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Морков цимет ролна со крем сирење глазура<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош бапка со чоколадо и фстак намаз<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош бапка со фстаци и фстак намаз<small>140 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош ореви-портокал бапка<small>120 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош чоко-портокал бапка<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош портокал ролна со домашен крем од портокал<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош даниш чизкејк со вишна<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош даниш со чоко-лешник намаз и малини<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош даниш чизкејк со домашни јаболки и карамел<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош чоко-мак бапка<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Лимон ролна со крем сирење глазура<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Бриош бапка со домашен ванила крем и суво грозје<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
           </div>
           <div class="o-cat"><h4>Мафини</h4>
-            <label class="o-row"><span class="o-name">Чоко-портокал мафин<small>70 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Чоко-портокал мафин (70 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Мафин со морков и крем сирење фил<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Мафин со морков и крем сирење фил (80 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Чоко-банана мафин<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Чоко-банана мафин (80 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Мафин со малини и бело/црно чоколадо<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Мафин со малини и бело/црно чоколадо (80 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Мафин со лимон и афион (мак)<small>60 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Мафин со лимон и афион (мак) (60 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Мафин со јагоди и бело чоколадо<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Мафин со јагоди и бело чоколадо (80 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Мафин со вишна и црно чоколадо<small>70 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Мафин со вишна и црно чоколадо (70 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Мафин со боровинки и бело чоколадо<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Мафин со боровинки и бело чоколадо (80 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Мафин со малини, фстак и бело чоколадо<small>90 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Мафин со малини, фстак и бело чоколадо (90 ден.)" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Чоко-портокал мафин<small>70 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Мафин со морков и крем сирење фил<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Чоко-банана мафин<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Мафин со малини и бело/црно чоколадо<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Мафин со лимон и афион (мак)<small>60 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Мафин со јагоди и бело чоколадо<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Мафин со вишна и црно чоколадо<small>70 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Мафин со боровинки и бело чоколадо<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Мафин со малини, фстак и бело чоколадо<small>90 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
           </div>
           <div class="o-cat"><h4>Колачи и тортички</h4>
-            <label class="o-row"><span class="o-name">Француски мадлен колачиња<small>20 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Француски мадлен колачиња (20 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Посно медено срце<small>60 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Посно медено срце (60 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Лења пита со домашни јаболки<small>70 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Лења пита со домашни јаболки (70 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Чоко-банана торта<small>90 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Чоко-банана торта (90 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Домашна тегната австриска штрудла со тиква/јаболка<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Домашна тегната австриска штрудла со тиква/јаболка (100 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Тиква лате торта<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Тиква лате торта (100 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Веган лимон торта<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Веган лимон торта (80 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Морков торта со крем сирење глазура<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Морков торта со крем сирење глазура (100 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Овошен колач<small>90 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Овошен колач (90 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Крамбл овошен колач<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Крамбл овошен колач (110 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Парче печен рикота чизкејк<small>160 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Парче печен рикота чизкејк (160 ден.)" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Француски мадлен колачиња<small>20 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Посно медено срце<small>60 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Лења пита со домашни јаболки<small>70 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Чоко-банана торта<small>90 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Домашна тегната австриска штрудла со тиква/јаболка<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Тиква лате торта<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Веган лимон торта<small>80 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Морков торта со крем сирење глазура<small>100 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Овошен колач<small>90 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Крамбл овошен колач<small>110 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Парче печен рикота чизкејк<small>160 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
           </div>
           <div class="o-cat"><h4>Колачиња</h4>
-            <label class="o-row"><span class="o-name">Брауни колачиња<small>20 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Брауни колачиња (20 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Лимон колачиња<small>20 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Лимон колачиња (20 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Лимон твист путер колачиња<small>20 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Лимон твист путер колачиња (20 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Портокал колачиња<small>20 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Портокал колачиња (20 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Новогодишни колачиња<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Новогодишни колачиња (40 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Лимон/портокал микс колачиња<small>20 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Лимон/портокал микс колачиња (20 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Посни медени цимет колачиња<small>30 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Посни медени цимет колачиња (30 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Посни чоко колачиња<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Посни чоко колачиња (40 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Путер боровинка колачиња<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Путер боровинка колачиња (40 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Колачиња со домашен фил од јаболки<small>30 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Колачиња со домашен фил од јаболки (30 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Путер колачиња со црн сусам и бело чоколадо<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Путер колачиња со црн сусам и бело чоколадо (40 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Путер колачиња со црно чоколадо и таан<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Путер колачиња со црно чоколадо и таан (40 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Путер колачиња со портокал и бело чоколадо<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Путер колачиња со портокал и бело чоколадо (40 ден.)" aria-label="Кол."></span></label>
-            <label class="o-row"><span class="o-name">Путер колачиња со црно чоколадо и слатко од зелена смоква<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" name="Путер колачиња со црно чоколадо и слатко од зелена смоква (40 ден.)" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Брауни колачиња<small>20 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Лимон колачиња<small>20 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Лимон твист путер колачиња<small>20 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Портокал колачиња<small>20 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Новогодишни колачиња<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Лимон/портокал микс колачиња<small>20 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Посни медени цимет колачиња<small>30 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Посни чоко колачиња<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Путер боровинка колачиња<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Колачиња со домашен фил од јаболки<small>30 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Путер колачиња со црн сусам и бело чоколадо<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Путер колачиња со црно чоколадо и таан<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Путер колачиња со портокал и бело чоколадо<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
+            <label class="o-row"><span class="o-name">Путер колачиња со црно чоколадо и слатко од зелена смоква<small>40 ден.</small></span><span class="qty"><input type="number" min="0" inputmode="numeric" placeholder="0" aria-label="Кол."></span></label>
           </div>
           </div>
-          <p class="fine">Проценетата вредност е ориентациона — конечната цена и услови се потврдуваат со вас.</p>
+          <p class="fine">Проценетата вредност е ориентациона - конечната цена и услови се потврдуваат со вас.</p>
         </div>
         <div class="field"><label for="f-frequency">Фреквенција</label>
           <select id="f-frequency" name="Фреквенција"><option value="">Изберете</option><option value="Секој ден">Секој ден</option><option value="Неколку пати неделно">Неколку пати неделно</option><option value="Неделно">Неделно</option><option value="Друго">Друго</option></select></div>
@@ -468,7 +328,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <img class="brand-logo" src="img/logo-light.png" alt="Бриош — Артисан пекара" width="52" height="68">
+          <img class="brand-logo" src="img/logo-light.png" alt="Бриош - Артисан пекара" width="52" height="68">
           Артисан Пекара Бриош
         </div>
         <p>Мала занаетчиска пекара во Скопје. Рачно печена, секое утро, без адитиви.</p>
