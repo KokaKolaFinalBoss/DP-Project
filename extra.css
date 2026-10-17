@@ -82,3 +82,21 @@
 .o-row{cursor:pointer}
 .qty input{border:1px solid var(--line);border-radius:4px;width:76px;-moz-appearance:auto;appearance:auto}
 .qty input::-webkit-outer-spin-button,.qty input::-webkit-inner-spin-button{-webkit-appearance:auto}
+
+/* logo images (replace old inline SVG marks) */
+.brand-logo{display:block;width:auto;flex-shrink:0}
+.brandmark .brand-logo{height:46px}
+.footer-brand .brand-logo{height:72px}
+.footer-brand{align-items:center}
+
+/* home: "for restaurants & businesses" — text left, logo right (like panpan.mk) */
+.teaser{text-align:left}
+.teaser-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.teaser-text p{margin-left:0;margin-right:0}
+.teaser-logo{display:flex;justify-content:center}
+.teaser-logo img{width:100%;max-width:300px;height:auto}
+@media (max-width:900px){
+  .teaser-grid{grid-template-columns:1fr;gap:32px}
+  .teaser-logo{order:-1}
+  .teaser-logo img{max-width:200px}
+}
